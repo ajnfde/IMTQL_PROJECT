@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/esir.lsi.imtql/src-gen" editDirectory="/esir.lsi.imtql.edit/src"
+    editorDirectory="/esir.lsi.imtql.editor/src" modelPluginID="esir.lsi.imtql" forceOverwrite="true"
+    modelName="Dsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="esir.lsi.imtql.edit"
+    editorPluginID="esir.lsi.imtql.editor" runtimeVersion="2.10">
+  <genPackages prefix="Dsl" basePackage="robot" disposableProviderFactory="true" fileExtensions="rbt"
+      ecorePackage="Dsl.ecore#/">
+    <genClasses ecoreClass="Dsl.ecore#//Robot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//Robot/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dsl.ecore#//Robot/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//Fonctionnalite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//Fonctionnalite/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dsl.ecore#//Fonctionnalite/ListeParametres"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//Device/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dsl.ecore#//Device/refFonction"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//IDevice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//IDevice/typeof"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//IDevice/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//EJavaObject"/>
+    <genClasses ecoreClass="Dsl.ecore#//Parametre">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dsl.ecore#//Parametre/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Dsl.ecore#//Parametre/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//Capture"/>
+    <genClasses ecoreClass="Dsl.ecore#//Action">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Dsl.ecore#//Action/return"/>
+    </genClasses>
+    <genClasses ecoreClass="Dsl.ecore#//Object"/>
+  </genPackages>
+</genmodel:GenModel>

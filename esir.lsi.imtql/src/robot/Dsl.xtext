@@ -1,0 +1,55 @@
+grammar robot.Dsl with org.eclipse.xtext.common.Terminals
+
+generate dsl "http://www.Dsl.robot"
+
+Robot:
+	'Robot' name=ID
+	'{'
+		//'Types' '{' Types+=Device ( "," Types+=Device)* '}' 
+		'components' '{' instances+=IDevice ( "," instances+=IDevice)* '}' 
+	'}';
+
+
+//
+//Fonctionnalite returns Fonctionnalite:
+//	Capture | Action;
+//
+
+//
+//Device:
+//	'Device' name=ID
+//	'{'
+//		 (refFonction+=Fonctionnalite";")+
+//	'}';
+
+IDevice:
+	typeof=ID  name=ID
+	;
+
+
+
+//EJavaObject:
+//	{Object}/* TODO: implement this rule and an appropriate IValueConverter */;
+//
+//Object:
+//	'String'|'Integer'|'Byte'|'Double'|'Float'|'Boolean'
+//;
+
+//Parametre:
+//	{Parametre}
+//	type=EJavaObject "#" name=ID
+//	;
+//
+//Capture:
+//	{Capture}
+//	'capture' name=ID
+//		//('type' type=EJavaObject)?
+//		'('(ListeParametres+=Parametre ( "," ListeParametres+=Parametre)* ')'  )?
+//	;
+//
+//Action:
+//	{Action}
+//	'action' return=EJavaObject  name=ID
+//	
+//		 ('(' ListeParametres+=Parametre ( "," ListeParametres+=Parametre)* ')')?
+//	;

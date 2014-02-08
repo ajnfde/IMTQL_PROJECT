@@ -1,0 +1,43 @@
+grammar robot.Device with org.eclipse.xtext.common.Terminals
+
+generate device "http://www.Device.robot"
+
+Types: 
+	Types+=Device ( "," Types+=Device)*
+;
+
+Device:
+	'Device' name=ID
+	'{'
+		 (refFonction+=Fonctionnalite";")+
+	'}';
+
+Fonctionnalite returns Fonctionnalite:
+	Capture | Action;
+
+EJavaObject:
+	{Object}/* TODO: implement this rule and an appropriate IValueConverter */;
+
+Object:
+	'String'|'Integer'|'Byte'|'Double'|'Float'|'Boolean'
+;
+
+Parametre:
+	{Parametre}
+	type=EJavaObject "#" name=ID
+	;
+
+Capture:
+	{Capture}
+	'capture' name=ID
+		//('type' type=EJavaObject)?
+		'('(ListeParametres+=Parametre ( "," ListeParametres+=Parametre)* ')'  )?
+	;
+
+Action:
+	{Action}
+	'action' return=EJavaObject  name=ID
+	
+		 ('(' ListeParametres+=Parametre ( "," ListeParametres+=Parametre)* ')')?
+	;
+	

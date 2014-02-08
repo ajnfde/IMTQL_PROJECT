@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="device" nsURI="http://www.Device.robot" nsPrefix="device">
+  <eClassifiers xsi:type="ecore:EClass" name="Types">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Types" upperBound="-1"
+        eType="#//Device" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refFonction" upperBound="-1"
+        eType="#//Fonctionnalite" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fonctionnalite">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ListeParametres" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EJavaObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Parametre">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//EJavaObject"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capture" eSuperTypes="#//Fonctionnalite"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//Fonctionnalite">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//EJavaObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//EJavaObject"/>
+</ecore:EPackage>
